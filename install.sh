@@ -52,19 +52,6 @@ else
     git clone --depth=1 https://github.com/zsh-users/zsh-history-substring-search $INSTALL/.oh-my-zsh/custom/plugins/zsh-history-substring-search
 fi
 
-#set zsh as default shell
-echo -e "\nSudo access is needed to change default shell\n"
-
-if chsh -s /bin/zsh $USER; then
-    echo -e "Installation Successful, exit terminal and enter a new session"
-else
-    echo -e "Something is wrong"
-fi
-
-#ZSHRC
-
-#SYMLINK to store the .zshrc
-ln -s $INSTALL/.zshrc $HOME/.zshrc
 
 FILE=$INSTALL/.zshrc
 if test -f "$FILE"; then
@@ -78,6 +65,19 @@ else
         cp $INSTALL/.oh-my-zsh/templates/zshrc.zsh-template $INSTALL/.zshrc
     fi
 fi
+
+#set zsh as default shell
+echo -e "\nSudo access is needed to change default shell\n"
+
+if chsh -s /bin/zsh $USER; then
+    echo -e "$USER\n"
+    echo -e "Installation Successful, exit terminal and enter a new session"
+else
+    echo -e "Something is wrong"
+fi
+
+#SYMLINK to store the .zshrc
+ln -s $INSTALL/.zshrc $HOME/.zshrc
 
 ######################## VIM ############################
 
