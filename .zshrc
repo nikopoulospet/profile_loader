@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/peter/.oh-my-zsh"
+export ZSH="$HOME/.dots/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -109,11 +109,3 @@ source $ZSH/oh-my-zsh.sh
 
 
 
-#SOFTENG PATH ENVIROMENT
-export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_281
-export PATH=$PATH:$JAVA_HOME/bin/
-export DERBY_INSTALL=/usr/lib/apache
-export DERBY_HOME=/usr/lib/apache
-export PATH=$PATH:$DERBY_HOME/bin
-#export CLASSPATH=$DERBY_INSTALL/lib/derbytools.jar:$DERBY_INSTALL/lib/derbynet.jar:$DERBY_INSTALL/lib/derbyclient.jar
-export CLASSSPATH=$DERBY_INSTALL/lib/*

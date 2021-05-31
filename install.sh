@@ -62,6 +62,10 @@ else
 fi
 
 #ZSHRC
+
+#SYMLINK to store the .zshrc
+ln -s $INSTALL/.zshrc $HOME/.zshrc
+
 FILE=$INSTALL/.zshrc
 if test -f "$FILE"; then
     echo "$FILE exists."
@@ -77,8 +81,26 @@ fi
 
 ######################## VIM ############################
 
+#install plugins
 
+#VIMRC
+FILE=$INSTALL/.vimrc
 
+#SYMLINK
+ln -s $FILE $HOME/.vimrc
+
+if test -f "$FILE"; then
+    echo "$FILE exists."
+else
+    # if the .vimrc doesnt exist pull it from PWD else pull it from the
+    # template file
+    if test -f "$PWD/.vimrc"; then
+        cp .vimrc $INSTALL/.vimrc
+    else
+	echo "\n get a vimrc\n"
+    fi
+fi
+echo -e "\n++++  DELETE REPO NOW  +++\n"
 echo -e "\n++++ RESTART SHELL NOW +++\n"
 
 exit
