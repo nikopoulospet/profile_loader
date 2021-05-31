@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/bin/bash 
 #set install dir, script should be starting in the profile loader dir
 mkdir ../.dots
 INSTALL=$PWD/../.dots
@@ -69,7 +68,7 @@ fi
 #set zsh as default shell
 echo -e "\nSudo access is needed to change default shell\n"
 
-if chsh -s /bin/zsh $USER; then
+if sudo chsh -s /bin/zsh $USER; then
     echo -e "$USER\n"
     echo -e "Installation Successful, exit terminal and enter a new session"
 else
@@ -84,7 +83,6 @@ ln -s $INSTALL/.zshrc $HOME/.zshrc
 
 #install plugins
 
-curl -fLo $INSTALL/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 #VIMRC
 FILE=$INSTALL/.vimrc
