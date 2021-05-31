@@ -100,6 +100,12 @@ else
 	echo "\n get a vimrc\n"
     fi
 fi
+
+###################### GITHUB ########################
+git config --global user.name "nikopoulospet"
+git config --global user.email "peter@nikopoulos.net"
+
+
 echo -e "\n++++  DELETE REPO NOW  +++\n"
 echo -e "\n++++ RESTART SHELL NOW +++\n"
 
