@@ -9,7 +9,7 @@ apt update
 if command -v zsh &> /dev/null && command -v git &> /dev/null && command -v wget &> /dev/null; then
     echo -e "ZSH and Git are already installed\n"
 else
-    if sudo apt install -y vim zsh git wget || sudo pacman -S vim zsh git wget || sudo dnf install -y vim zsh git wget || sudo yum install -y vim zsh git wget || sudo brew install vim git zsh wget || pkg install vim git zsh wget ; then
+    if sudo apt install -y vim zsh git wget curl || sudo pacman -S vim zsh git wget curl || sudo dnf install -y vim zsh git wget curl || sudo yum install -y vim zsh git wget curl || sudo brew install vim git zsh wget curl || pkg install vim git zsh wget curl ; then
         echo -e "vim zsh wget and git Installed\n"
     else
         echo -e "Please install the following packages first, then try again: zsh git wget \n" && exit
@@ -77,16 +77,20 @@ else
 fi
 
 #SYMLINK to store the .zshrc
+ln -s $INSTALL/.oh-my-zsh $HOME/.oh-my-zsh
 ln -s $INSTALL/.zshrc $HOME/.zshrc
 
 ######################## VIM ############################
 
 #install plugins
 
+curl -fLo $INSTALL/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 #VIMRC
 FILE=$INSTALL/.vimrc
 
 #SYMLINK
+ln -s $INSTALL/.vim $HOME/.vim
 ln -s $FILE $HOME/.vimrc
 
 if test -f "$FILE"; then
