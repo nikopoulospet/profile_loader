@@ -87,6 +87,8 @@ ln -s $INSTALL/.zshrc $HOME/.zshrc
 #VIMRC
 FILE=$INSTALL/.vimrc
 
+mkdir $INSTALL/.vim
+
 #SYMLINK
 ln -s $INSTALL/.vim $HOME/.vim
 ln -s $FILE $HOME/.vimrc
